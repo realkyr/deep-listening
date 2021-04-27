@@ -35,7 +35,7 @@ export default function Solution(props) {
           height: 400,
           width: '100%',
           position: 'absolute',
-          right: -20,
+          right: -32,
           top: -110
         }}
       />

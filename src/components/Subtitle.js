@@ -30,6 +30,7 @@ export default function Subtitle(props) {
         props.setStep(2)
       }, 2100)
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [anim])
 
   return (

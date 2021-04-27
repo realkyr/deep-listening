@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import Sound from './plugin/sound'
 
 import Layout from "./components/Layout/Default";
 
