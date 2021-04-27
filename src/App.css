@@ -1,5 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&display=swap');
+
 .App {
   text-align: center;
+}
+
+@font-face {
+  font-family: 'copperplate';
+  src: local('copperplate'), url(./assets/fonts/copperplate.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+.copperplate {
+  font-family: 'copperplate';
+}
+
+.answer {
+  border-style: solid !important;
+  border-color: #475DED !important;
+  border-width: 2px !important;
+  border-radius: 15px !important;
+  text-align: center;
+  background-color: #F9F7ED !important;
+  width: 85% !important;
+  position: relative;
+  z-index: 99;
+}
+
+.answer.ant-input:focus, .ant-input-focused {
+  border-right-width: 2px !important;
+}
+.answer.red {
+  border-style: solid !important;
+  border-color: #DB644D !important;
+  background-color: rgb(249, 247, 237);
+  border-width: 2px !important;
+  border-radius: 15px !important;
+}
+
+.th-chonburi {
+  font-family: 'Chonburi', cursive;
+}
+
+.th-prompt {
+  font-family: 'Prompt', sans-serif;
+}
+
+.outer-wrapper {
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.sec-transition {
+  width: 600px;
+  height: 600px;
+  background: #F9F7ED;
+  position: absolute;
+  top: -480px;
+  left: -230px;
+  border-radius: 50%;
+  transition: all 2s;
+  /* top: -100px; */
+}
+
+.sec-transition.full {
+  width: 1500px;
+  height: 1500px;
+}
+
+.content {
+  overflow: hidden;
+  height: 812px;
+  width: 375px;
+}
+
+@media only screen and (max-width: 575px) {
+  .outer-wrapper {
+    height: initial;
+    background: #F9F7ED;
+  }
+
+  .content {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  html,
+  body {
+    overflow: hidden
+  }
 }
 
 .App-logo {
@@ -35,4 +135,135 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.no-button {
+  padding: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  border: 5px solid #DB644D !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 700 !important;
+  color: #DB644D !important;
+  background: #F9F7ED !important;
+  font-size: 18px !important;
+  position: absolute !important; 
+  top: -160px !important;
+  right: 0 !important;
+  transform: rotate(-20deg);
+}
+.yes-button {
+  width: 150px !important;
+  height: 150px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  border: 5px solid #475EED !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 700 !important;
+  color: #475EED !important;
+  background: #F9F7ED !important;
+  font-size: 20px !important;
+  border-radius: 100% !important;
+  position: absolute !important;
+  top: -90px !important;
+  left: 0px !important;
+  flex-direction: column;
+}
+
+.half-circle {
+  border: 3px solid #EC5A44;
+  display: inline-flex;
+  margin: 0 1em 1em 0;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 20px;
+  transition: all 0.2s;
+}
+.half-circle span {
+  margin: -10px 0 0 0;
+  color: #EC5A44;
+  transition: all 0.2s;
+}
+
+.half-circle:hover {
+  background-color: #EC5A44;
+}
+
+.half-circle:hover span {
+  color: #F9F7ED;
+}
+
+.half-circle.bottom {
+  height: 50px;
+  width: 100px;
+}
+.half-circle.bottom {
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+
+.yes-button:hover {
+  background-color: #475EED !important;
+  color: #F9F7ED !important;
+}
+
+.no-button:hover {
+  background-color: #DB644D !important;
+  color: #F9F7ED !important;
+}
+
+.fade-enter{
+  opacity: 0;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 2000ms;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently                                 supported by Chrome, Edge, Opera and Firefox */
+}
+
+#trash .ant-image {
+  position: static !important;
+}
+
+#trash {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+html,
+body {
+  background: black;
 }
