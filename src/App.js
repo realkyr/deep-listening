@@ -19,6 +19,10 @@ import SurveyAns from "./components/SurveyAns";
 import Turnback from "./components/Turnback";
 import Recheck from "./components/Recheck";
 import Final from "./components/Final";
+import Play from "./components/Play";
+import Feel from "./components/Feel";
+import Behind from "./components/Behind";
+import RealFinal from "./components/RealFinal";
 
 import "./App.css";
 import "antd/dist/antd.css";
@@ -27,6 +31,8 @@ function App() {
   const [step, setStep] = useState(0);
   const [answer, setAnswer] = useState("");
   const [answerTwo, setAnswerT] = useState("");
+  const [answerThree, setAnswerTh] = useState("");
+  const [answerFour, setAnswerF] = useState("");
   const [surveyAns, setSA] = useState(0);
   const [audio, setAudio] = useState() 
   useEffect(() => {
@@ -94,14 +100,26 @@ function App() {
           <Recheck setSA={setSA} answer={answerTwo} setAnswer={setAnswerT} surveyAns={surveyAns} step={step} setStep={setStep} />
         );
       case 14:
-        return <Final surveyAns={surveyAns} />;
+        return <Final surveyAns={surveyAns} step={step} setStep={setStep} />
+      case 15:
+        return <Play lowerVolume={() => {
+          audio.volume = 0.2
+        }} turnOnVolume={() => {
+          audio.volume = 1.0
+        }} surveyAns={surveyAns} step={step} setStep={setStep} />
+      case 16:
+        return <Feel setAnswer={setAnswerTh} answer={answerThree} step={step} setStep={setStep} />
+      case 17:
+        return <Behind reanswer={answerThree} setAnswer={setAnswerF} answer={answerFour} step={step} setStep={setStep} />
+      case 18:
+        return <RealFinal />
       default:
         break;
     }
   };
 
   const changePage = () => {
-    if (step === 8 || step === 11) {
+    if (step === 8 || step === 11 || step === 14) {
       setStep(step + 1)
     }
   }

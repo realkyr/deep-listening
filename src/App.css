@@ -38,6 +38,13 @@
   border-width: 2px !important;
   border-radius: 15px !important;
 }
+.answer.yellow {
+  border-style: solid !important;
+  border-color: #FCD400 !important;
+  background-color: rgb(249, 247, 237);
+  border-width: 2px !important;
+  border-radius: 15px !important;
+}
 
 .th-chonburi {
   font-family: 'Chonburi', cursive;
@@ -273,4 +280,12 @@
 html,
 body {
   background: black;
+}
+
+.logo-wrapper {
+  max-height: 100;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

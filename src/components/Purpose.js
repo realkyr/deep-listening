@@ -1,19 +1,20 @@
-import React from "react";
-import { Typography } from "antd";
+import React, { useState } from "react";
+import { Typography, Image } from "antd";
 
 const { Text } = Typography;
 
 export default function Purpose(props) {
+  const [className, setClassName] = useState('fade-enter')
   return (
     <>
-      <div>
+      <div style={{ paddingBottom: '10vh' }}>
         <Text
           className="th-prompt"
           style={{
             textAlign: "center",
             width: "100%",
             display: "block",
-            fontSize: '1.15em',
+            fontSize: '1.05em',
             color: "#DB644D",
           }}
         >
@@ -27,7 +28,7 @@ export default function Purpose(props) {
             textAlign: "center",
             width: "100%",
             display: "block",
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 700,
             marginTop: 20,
             marginBottom: 20,
@@ -41,7 +42,7 @@ export default function Purpose(props) {
             textAlign: "center",
             width: "100%",
             display: "block",
-            fontSize: '1.15em',
+            fontSize: '1.05em',
             marginBottom: 20,
           }}
         >
@@ -76,6 +77,75 @@ export default function Purpose(props) {
                 transform: 'translate(-50%, -50%)'
               }}
               src={require('../assets/button1-01.png').default}
+            />
+          </div>
+        </div>
+        <div className={className} style={{
+          position: 'absolute',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          left: 0,
+          width: '100%',
+          marginTop: '5vh'
+        }}>
+          <div className="logo-wrapper">
+            <Image
+              onLoad={() => {
+                setClassName('fade-enter-active')
+              }}
+              style={{
+                maxHeight: 50,
+                width: 'auto'
+              }}
+              preview={false}
+              src={require("../assets/logo/swu-01.png").default}
+            />
+            <Image
+              onLoad={() => {
+                setClassName('fade-enter-active')
+              }}
+              style={{
+                maxHeight: 80,
+                width: 'auto'
+              }}
+              preview={false}
+              src={require("../assets/logo/doet-01.png").default}
+            />
+          </div>
+          <div className="logo-wrapper">
+            <Image
+              onLoad={() => {
+                setClassName('fade-enter-active')
+              }}
+              style={{
+                maxHeight: 50,
+                width: 'auto'
+              }}
+              preview={false}
+              src={require("../assets/logo/multi-01.png").default}
+            />
+            <Image
+              onLoad={() => {
+                setClassName('fade-enter-active')
+              }}
+              style={{
+                maxHeight: 50,
+                width: 'auto'
+              }}
+              preview={false}
+              src={require("../assets/logo/colab-02.png").default}
+            />
+            <Image
+              onLoad={() => {
+                setClassName('fade-enter-active')
+              }}
+              style={{
+                maxHeight: 50,
+                width: 'auto'
+              }}
+              preview={false}
+              src={require("../assets/logo/iamd-01.png").default}
             />
           </div>
         </div>
